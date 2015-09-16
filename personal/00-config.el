@@ -32,8 +32,10 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
-
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h") 'helm-projectile)
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+
 
 (require 'framemove)
 (windmove-default-keybindings)
@@ -43,5 +45,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(exec-path-from-shell-copy-env "PYTHONPATH")
 
 ;;; 00-config.el ends here
