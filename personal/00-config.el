@@ -48,4 +48,20 @@
 
 (exec-path-from-shell-copy-env "PYTHONPATH")
 
+(require 'god-mode)
+(global-set-key (kbd "<escape>") 'god-mode-all)
+(setq god-exempt-major-modes nil)
+(setq god-exempt-predicates nil)
+
+(defun my-update-cursor ()
+  (let ((limited-colors-p (> 257 (length (defined-colors)))))
+    (cond (god-local-mode (progn
+                            (set-face-background 'mode-line (if limited-colors-p "white" "#e9e2cb"))
+                            (set-face-background 'mode-line-inactive (if limited-colors-p "white" "#e9e2cb"))))
+          (t (progn
+               (set-face-background 'mode-line (if limited-colors-p "black" "#0a2832"))
+               (set-face-background 'mode-line-inactive (if limited-colors-p "black" "#0a2832")))))))
+
+(add-hook 'god-mode-enabled-hook 'my-update-cursor)
+(add-hook 'god-mode-disabled-hook 'my-update-cursor)
 ;;; 00-config.el ends here
