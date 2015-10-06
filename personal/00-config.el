@@ -7,6 +7,7 @@
 ;; Install my packages
 (prelude-install-packages)
 
+
 (setq default-input-method "MacOSX")
 
 (setq mac-command-modifier 'meta
@@ -35,6 +36,7 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h") 'helm-projectile)
 (global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
 
 
 (require 'framemove)
