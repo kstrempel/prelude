@@ -15,14 +15,9 @@
       ns-function-modifier 'super)
 
 ;; Initialize python-mode
-
-(add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'eldoc-mode)
 
 (exec-path-from-shell-initialize)
-
-(add-hook 'python-mode-hook
-          '(lambda () (local-set-key (kbd "M-.") #'anaconda-mode-goto) (setq python-shell-interpreter "/usr/local/bin/python3")))
 
 (require 'highlight-symbol)
 (setq highlight-symbol-idle-delay 0.3)
